@@ -1,0 +1,350 @@
+:root {
+  --primary-color: #c72727;
+  --secondary-color: #f99500;
+  --light-color: #f3f3f3;
+  --dark-color: #333;
+  --max-width: 1100px;
+}
+
+.category {
+  --sports-color: #f99500;
+  --ent-color: #a66bb3;
+  --tech-color: #009cff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body { 
+  font-family: 'Lato', sans-serif;
+  line-height: 1.5;
+  background: var(--light-color);
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+p {
+  margin: .5rem 0;
+}
+
+img {
+  width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Staatliches', cursive;
+  margin-bottom: .55rem;
+  line-height: 1.3;
+}
+
+/* Utility */
+.container {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 0 2rem;
+  overflow: hidden;
+}
+
+.category {
+  display: inline-block;
+  color: #fff;
+  font-size: 0.55rem;
+  text-transform: uppercase;
+  padding: 0.4rem 0.6rem;
+  border-radius: 15px;
+  margin-bottom: 0.5rem;
+}
+
+/* Color */
+.category-sports { background: var(--sports-color);}
+.category-ent { background: var(--ent-color);}
+.category-tech { background: var(--tech-color);}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  border: none;
+  background: var(--dark-color);
+  color: #fff;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.5rem;
+}
+
+.btn-light {background: var(--light-color);}
+.btn-primary {background: var(--primary-color);}
+.btn-secondary {background: var(--secondary-color);}
+
+.btn-block {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+.btn:hover {
+  opacity: 0.7;
+}
+
+/* Cards */
+.card {
+  background: #fff;
+  padding: 1rem;
+}
+
+/* Background and color */
+.bg-dark {
+  background: var(--dark-color);
+  color: #fff;
+}
+
+.bg-primary {
+  background: var(--primary-color);
+  color: #fff;
+}
+
+.bg-secondary {
+  background: var(--secondary-color);
+  color: #fff;
+}
+
+.bg-dark h1,
+.bg-dark h2,
+.bg-dark h3,
+.bg-dark a,
+.bg-primary h1,
+.bg-primary h2,
+.bg-primary h3,
+.bg-primary a,
+.bg-secondary h1,
+.bg-secondary h2,
+.bg-secondary h3,
+.bg-secondary a {
+  color: #fff;
+}
+
+/* Padding top and bottom */
+.py-1 {padding: 1.5rem 0;}
+.py-2 {padding: 2rem 0;}
+.py-3 {padding: 3rem 0;}
+
+/* Padding */
+.p-1 {padding: 1.5rem 0;}
+.p-2 {padding: 2rem 0;}
+.p-3 {padding: 3rem 0;}
+
+/* Heading font-size */
+.l-heading {
+  font-size: 3rem;
+}
+
+/* List */
+.list li {
+  padding: .5rem 0;
+  border-bottom: #555 dotted 1px;
+  width: 90%;
+}
+
+.list li a:hover {
+  color: var(--primary-color) !important;
+}
+
+/* Inner Page Grid Container */
+.page-container {
+  display: grid;
+  grid-template-columns: 5fr 2fr;
+  margin: 2rem 0;
+  grid-gap: 1.5rem;
+}
+
+.page-container > *:first-child {
+  /* to span grid container across row */
+  grid-row: 1 / span 3;
+}
+/* NAVIGATION */
+#main-nav {
+  background: #fff;
+  position: sticky;
+  top: 0;
+  /* Add a z-index property for the navbar to always be on top */
+  z-index: 2;
+}
+
+/* Using grid instead of flex to align the navbar contents */
+#main-nav .container {
+  display: grid;
+  grid-template-columns: 6fr 3fr 2fr;
+  padding: 1rem;
+  align-items: center;
+}
+
+#main-nav .container img {
+  width: 11rem;
+}
+
+/* Using flex to align the list item vertically */
+#main-nav .container ul {
+  /* To push the list item to the right end */
+  justify-self: end;
+  display: flex;
+}
+
+#main-nav ul li a {
+  /* Add padding to separate the list items */
+  padding: .75rem;
+  font-weight: bold;
+}
+
+#main-nav ul li a.current {
+  background: var(--primary-color);
+  color: #fff;
+}
+
+#main-nav ul li a.current:hover {
+  background: var(--light-color);
+  color: var(--dark-color);
+}
+
+/* SOcial Button Style */
+#main-nav .social {
+  justify-self: center;
+}
+
+#main-nav .social i {
+  /* T spread the icons apart */
+  margin-right: .5rem;
+}
+
+#main-nav .social a {
+  color: #777;
+}
+
+#main-nav .social a:nth-child(1):hover {
+  color: #4267b2;
+}
+#main-nav .social a:nth-child(2):hover {
+  color: #1da1f2;
+}
+#main-nav .social a:nth-child(3):hover {
+  color: #e1306c;
+}
+#main-nav .social a:nth-child(4):hover {
+  color: #ff0000;
+}
+
+/* Showcase */
+#showcase {
+  color: #fff;
+  background: #333;
+  padding: 2rem;
+  position: relative;
+}
+/* To add the image on top of the background with opacity */
+#showcase:before {
+  content: '';
+  background: url(../img/featured.jpg) no-repeat center center/cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.4;
+}
+
+#showcase .showcase-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+}
+
+/* To make the text on the background display on top of the image */
+#showcase .showcase-content {
+  z-index: 1;
+}
+
+#showcase .showcase-content p {
+  margin-bottom: 1rem;
+}
+
+/* Home Articles */
+#home-articles .articles-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+}
+
+#home-articles .articles-container > *:first-child,
+#home-articles .articles-container > *:last-child {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem;
+  align-items: center;
+  /* To span the first child to start at 1 and end at 2 */
+  grid-column: 1 / span 2;
+}
+
+#home-articles .articles-container > *:last-child {
+  /* To span the last child to start at 2 and end at 3 */
+  grid-column: 2 / span 2;
+}
+
+/* Article Meta */
+#article .meta {
+  display: flex;
+  /* To justify an element and add space between */
+  justify-content: space-between;
+  align-items: center;
+  background: #eee;
+  padding: 0.5rem;
+}
+
+#article .meta .category {
+  margin-top: 0.4rem;
+}
+/* FOOTER */
+#main-footer {
+  background: var(--dark-color);
+  color: #fff;
+}
+
+#main-footer img {
+  width: 150px;
+}
+
+#main-footer a {
+  color: #fff;
+}
+
+#main-footer .footer-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1.5rem;
+}
+
+/*  > *:last-child is targeting the direct element of the last child */
+#main-footer .footer-container > *:last-child {
+  background: #444;
+  padding: .5rem;
+  grid-column: 1 / span 4;
+  text-align: center;
+  font-size: 0.75rem;
+}
+
+#main-footer .footer-container input[type='email'] {
+  width: 90%;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+#main-footer .footer-container input[type='submit'] {
+  width: 90%;
+}
